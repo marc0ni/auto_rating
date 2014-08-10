@@ -1,0 +1,262 @@
+<<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Auto Rating</title>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta content="" name="description" />
+<meta content="" name="author" />
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag "../assets/plugins/bootstrap/css/bootstrap.min.css", media: "all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag "../assets/plugins/bootstrap/css/bootstrap-responsive.min.css", media: "all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag "../assets/plugins/bootstrap-datepicker/css/datepicker.css", media: "all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag "../assets/plugins/font-awesome/css/font-awesome.min.css", media: "all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag "../assets/css/style-metro.css", media: "all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag "../assets/css/style.css", media: "all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag "../assets/css/style-responsive.css", media: "all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag "../assets/css/themes/default.css", media: "all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag "../assets/css/themes/blue.css", media: "all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag "../assets/css/themes/brown.css", media: "all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag "../assets/css/themes/grey.css", media: "all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag "../assets/css/themes/light.css", media: "all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag "../assets/css/themes/purple.css", media: "all", "data-turbolinks-track" => true %>
+
+  <%= csrf_meta_tags %>
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/style-metro.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+<link href="assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<!-- END GLOBAL MANDATORY STYLES -->
+<link rel="shortcut icon" href="favicon.ico" />
+<!-- END HEAD -->
+</head>
+<body>	
+	<!-- BEGIN BODY -->
+	<body class="page-header-fixed page-boxed">
+		<!-- BEGIN HEADER -->   
+		<div class="header navbar navbar-inverse navbar-fixed-top">
+			<!-- BEGIN TOP NAVIGATION BAR -->
+			<div class="navbar-inner">
+				<div class="container">
+					<!-- BEGIN LOGO -->
+					<a class="brand">
+					<img src="../assets/img/logo.png" alt="logo" />
+					</a>
+					<!-- END LOGO -->
+					<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+					<a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+					<img src="../assets/img/menu-toggler.png" alt="" />
+					</a>          
+					<!-- END RESPONSIVE MENU TOGGLER -->            
+					<!-- BEGIN TOP NAVIGATION MENU -->              
+					<ul class="nav pull-right">         
+						<!-- BEGIN SOCIAL MEDIA DROPDOWN -->
+						<!-- END SOCIAL MEDIA DROPDOWN -->
+					</ul>
+					<!-- END TOP NAVIGATION MENU --> 
+				</div>
+			</div>
+			<!-- END TOP NAVIGATION BAR -->
+		</div>
+		<!-- END HEADER -->
+		<div class="container">
+			<!-- BEGIN CONTAINER -->  
+			<div class="page-container row-fluid">
+				<!-- BEGIN SIDEBAR -->
+				<div class="page-sidebar nav-collapse collapse">
+					<!-- BEGIN SIDEBAR MENU -->        
+					<ul class="page-sidebar-menu">
+						<li>
+							<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+							<div class="sidebar-toggler hidden-phone"></div>
+							<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+						</li>
+						<li>
+							<!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+							<form class="sidebar-search">
+								<div class="input-box">
+									<a href="javascript:;" class="remove"></a>
+									<input type="text" placeholder="Search..." />
+									<input type="button" class="submit" value=" " />
+								</div>
+							</form>
+							<!-- END RESPONSIVE QUICK SEARCH FORM -->
+						<!-- BEGIN FRONT DEMO -->
+						<li>
+							<a href="http://keenthemes.com/preview/index.php?theme=metronic_frontend" target="_blank">
+							<i class="icon-gift"></i> 
+							<span class="title">Frontend Theme</span>
+							</a>
+						</li>
+						<!-- END FRONT DEMO -->
+						
+						<li>
+							<a class="active" href="javascript:;">
+							<i class="icon-sitemap"></i> 
+							<span class="title">Set Up</span>
+							<span class="arrow "></span>
+							</a>
+							<ul class="sub-menu">
+								<li>
+									<a href="/agents/new">
+									New Agents
+									<span class="arrow"></span>
+									</a>
+								</li>
+								<li>
+									<a href="/accounts/new">
+									New Accounts
+									<span class="arrow"></span>
+									</a>
+								</li>
+								<li>
+									<a href="/risks">
+									Risks
+									<span class="arrow"></span>
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a class="active" href="javascript:;">
+							<i class="icon-sitemap"></i> 
+							<span class="title">Submissions</span>
+							<span class="arrow "></span>
+							</a>
+							<ul class="sub-menu">
+								<li>
+									<a href="/submissions/new">
+									New Business
+									<span class="arrow"></span>
+									
+									<a href="/submissions/new"></a>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:;">
+									Renewals
+									<span class="arrow"></span>
+									<a href="#"></a>
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!-- END SIDEBAR MENU -->
+				</div>
+				<!-- END SIDEBAR -->
+				<!-- BEGIN PAGE -->
+				<div class="page-content">
+					<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+					<!-- BEGIN PAGE CONTAINER-->
+					<div class="container-fluid">
+						<!-- BEGIN PAGE HEADER-->
+						<div class="row-fluid">
+							<div class="span12">
+								<!-- BEGIN STYLE CUSTOMIZER -->
+								<div class="color-panel hidden-phone">
+									<div class="color-mode-icons icon-color"></div>
+									<div class="color-mode-icons icon-color-close"></div>
+									<div class="color-mode">
+										<p>THEME COLOR</p>
+										<ul class="inline">
+											<li class="color-black current color-default" data-style="default"></li>
+											<li class="color-blue" data-style="blue"></li>
+											<li class="color-brown" data-style="brown"></li>
+											<li class="color-purple" data-style="purple"></li>
+											<li class="color-grey" data-style="grey"></li>
+											<li class="color-white color-light" data-style="light"></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- END PAGE HEADER-->
+						<!-- BEGIN PAGE CONTENT-->
+						<div class="row-fluid">
+							<div class="span12">
+								<%= yield %>
+								<%= yield :deductibles %>
+								<%= yield :details %>
+								<%= yield :limits %>
+							</div>
+						</div>
+						<!-- END PAGE CONTENT-->
+					</div>
+					<!-- END PAGE CONTAINER--> 
+				</div>
+				<!-- END PAGE -->          
+			</div>
+		</div>
+		<!-- END CONTAINER -->
+		<!-- BEGIN FOOTER -->
+		<div class="footer">
+			<div class="container">
+				<div class="footer-inner">
+					2013 &copy; Metronic by keenthemes.
+				</div>
+				<div class="footer-tools">
+					<span class="go-top">
+					<i class="icon-angle-up"></i>
+					</span>
+				</div>
+			</div>
+		</div>
+		<!-- END FOOTER -->
+		<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+		<!-- BEGIN CORE PLUGINS -->   
+		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+		<%= javascript_include_tag "../assets/plugins/jquery-1.10.1.min.js", "data-turbolinks-track" => true %>
+		<%= javascript_include_tag "../assets/plugins/jquery-migrate-1.21.min.js", "data-turbolinks-track" => true %>
+		<%= javascript_include_tag "../assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js", "data-turbolinks-track" => true %>
+		<%= javascript_include_tag "../assets/plugins/bootstrap/js/bootstrap.js", "data-turbolinks-track" => true %>
+		<%= javascript_include_tag "../assets/plugins/bootstrap/js/bootstrap.min.js", "data-turbolinks-track" => true %>
+		<%= javascript_include_tag "../assets/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js", "data-turbolinks-track" => true %>
+		<%= javascript_include_tag "../assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js", "data-turbolinks-track" => true %>
+		<%= javascript_include_tag "../assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js", "data-turbolinks-track" => true %>
+		<%= javascript_include_tag "../assets/plugins/jquery.blockui.min.js", "data-turbolinks-track" => true %>
+		<%= javascript_include_tag "../assets/plugins/uniform/jquery.uniform.min.js", "data-turbolinks-track" => true %>
+		<%= javascript_include_tag "../assets/plugins/jquery.cookie.min.js", "data-turbolinks-track" => true %>
+		<%= javascript_include_tag "../assets/scripts/app.js", "data-turbolinks-track" => true %>
+		   
+		<script>
+			jQuery(document).ready(function() {    
+			   App.init();
+			});
+		</script>
+		
+		<script>$(".input-group.date").datepicker({ autoclose: true, todayHighlight: true });</script>
+		
+		<script>$(document).on('touch click', '*[data-datepicker="true"] .input-group-addon', function(e){
+		    $('input[type="text"]', $(this).parent()).focus();
+		});</script>
+		
+		 <script>$('#effdate').datepicker({format: 'mm-dd-yyyy'});</script>
+		 
+		 <script>$('#expdate').datepicker({format: 'mm-dd-yyyy'});</script>
+		 
+		 <!-- Popover script -->
+		 <script type="text/javascript">
+		 	$(document).ready(function() {
+				event.preventDefault();
+				event.stopPropagation(); 
+				$("[rel='popover']").popover({
+					html: 'true',
+					content : '<div id="(this).list">Your Text Here</div>'
+				});
+				$(this).popover('show');
+			});
+		 </script>
+		 
+		 
+		<!-- END JAVASCRIPTS -->
+	</body>
+	<!-- END BODY -
