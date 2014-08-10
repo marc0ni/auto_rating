@@ -1,12 +1,25 @@
-<h1>Listing limits</h1>
+<h3 class="page-title">
+	Insurance Rating<small> demonstration Ruby on Rails project</small>
+</h3>
+<ul class="breadcrumb">
+	<li>
+		<i class="icon-home"></i>
+		<a href="/">Home</a>
+		<i class="icon-angle-left"></i> 
+	</li>
+	<li>
+		<a href="/accounts">Accounts List</a>
+	</li>
+</ul>
+<h1>Listing Limits</h1>
 
-<table>
-  <thead>
+<table class="table-bordered table-striped table-condensed flip-content">
+  <thead class="flip-content">
+    <tr>
     <tr>
       <th>Partial</th>
-      <th>Bipd</th>
+	  <th>BIPD</th>
       <th>Medical</th>
-      <th>Risk</th>
       <th></th>
       <th></th>
       <th></th>
@@ -17,9 +30,8 @@
     <% @limits.each do |limit| %>
       <tr>
         <td><%= limit.partial %></td>
-        <td><%= limit.bipd %></td>
-        <td><%= limit.medical %></td>
-        <td><%= limit.risk %></td>
+		<td><%= number_to_currency(limit.bipd )%></td>
+        <td><%= number_to_currency(limit.medical) %></td>  
         <td><%= link_to 'Show', limit %></td>
         <td><%= link_to 'Edit', edit_limit_path(limit) %></td>
         <td><%= link_to 'Destroy', limit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
