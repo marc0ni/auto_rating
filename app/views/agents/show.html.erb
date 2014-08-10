@@ -1,58 +1,72 @@
+<h3 class="page-title">
+	Auto Rating<small> demonstration Ruby on Rails project</small>
+</h3>
+<ul class="breadcrumb">
+	<li>
+		<i class="icon-home"></i>
+		<a href="/">Home</a> 
+	</li>
+</ul>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Contact:</strong>
-  <%= @agent.contact %>
-</p>
+<div class="form-horizontal form-view">
+	<h3> View Agent Info -  <%= @agent.name %> </h3>
+	<h3 class="form-section">Agent Info</h3>
+	<div class="row-fluid">
+		<div class="span6 ">
+			<div class="control-group">
+				<label class="control-label" for="firstName">Contact:
+ </label>
+				<div class="controls">
+					<span class="text"> <%= @agent.contact %></span>
+				</div>
+			</div>
+		</div>
+		<!--/span-->
+	</div>
+	
+	<!--/row-->
+	<h3 class="form-section">Address</h3>
+	<div class="row-fluid">
+		<div class="span12 ">
+			<div class="control-group">
+				<label class="control-label" >Street:</label>
+				<div class="controls">
+					<span class="text"><%= @agent.address %></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="span3 ">
+			<div class="control-group">
+				<label class="control-label" >City:</label>
+				<div class="controls">
+					<span class="text"><%= @agent.city %></span>
+				</div>
+			</div>
+		</div>
+		<!--/span-->
+		<div class="span3">
+			<div class="control-group">
+				<label class="control-label" >State:</label>
+				<div class="controls">
+					<span class="text"><%= @agent.state %></span>
+				</div>
+			</div>
+		</div>
+		<!--/span-->
+		<div class="span3 ">
+			<div class="control-group">
+				<label class="control-label" >Post Code:</label>
+				<div class="controls">
+					<span class="text"><%= @agent.zip %></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>		
 
-<p>
-  <strong>Name:</strong>
-  <%= @agent.name %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @agent.address %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @agent.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @agent.state %>
-</p>
-
-<p>
-  <strong>Zip:</strong>
-  <%= @agent.zip %>
-</p>
-
-<p>
-  <strong>Account:</strong>
-  <%= @agent.account %>
-</p>
-
-<p>
-  <strong>Submission:</strong>
-  <%= @agent.submission %>
-</p>
-
-<p>
-  <strong>Proposal:</strong>
-  <%= @agent.proposal %>
-</p>
-
-<p>
-  <strong>Policy:</strong>
-  <%= @agent.policy %>
-</p>
-
-<p>
-  <strong>References:</strong>
-  <%= @agent.references %>
 </p>
 
 <%= link_to 'Edit', edit_agent_path(@agent) %> |

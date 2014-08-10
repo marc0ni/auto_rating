@@ -10,52 +10,80 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="container-fluid">
+	  <!-- BEGIN FORM-->
+	  <form action="#" class="form-horizontal">
+		  <h3 class="form-section">Agent Info</h3>
+		  <div class="row-fluid">
+			  <div class="span6 ">
+				  <div class="control-group">
+					  <label class="control-label">Contact Name</label>
+					  <div class="controls">
+						  <input type="text" class="m-wrap span12" <%= f.text_field :contact %> 
+					  </div>
+				  </div>
+			  </div> 
+			  <!--/span-->
+			  <div class="span6 ">
+				  <label class="control-label">Agency Name</label>
+				  <div class="controls">
+					  <input type="text" class="m-wrap span12"<%= f.text_field :name %>
+				  </div>
+			  </div>
+		  </div>
+		  <!--/row-->
+		  <h3 class="form-section">Address</h3>
+		  <div class="row-fluid">
+			  <div class="span12 ">
+				  <div class="control-group">
+					  <label class="control-label">Street</label>
+					  <div class="controls">
+						  <input type="text" class="m-wrap span12"<%= f.text_field :address %>
+					  </div>
+				  </div>
+			  </div>
+		  </div>
+		  <!--/row-->
+		  <div class="row-fluid">
+			  <div class="span6 ">
+				  <div class="control-group">
+					  <label class="control-label">City</label>
+					  <div class="controls">
+						   <input type="text" class="m-wrap span12"<%= f.text_field :city %>
+					  </div>
+				  </div>
+			  </div>
+			  <!--/span-->
+			  <div class="span3 ">
+				  <div class="control-group">
+					  <label class="control-label" >State</label>
+					  <div class="controls">
+						  <select class="m-wrap span12"
+						  <%= f.select :state, [ 'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD','MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'], :prompt => 'Select One' %>
+						  </select>
+					  </div>
+				  </div>
+			  </div>
+			  <!--/span--> 
+			  <div class="span3 ">
+				  <div class="control-group">
+					  <label class="control-label">Post Code</label>
+					  <div class="controls">
+						  <input type="text" class="m-wrap span12" <%= f.text_field :zip %>
+					  </div>
+				  </div>
+			  </div>
+			  <!--/span-->
+		  </div>
+		  <!--/row-->
+		  <div class="form-actions">
+			  <button type="submit" class="btn blue"><i class="icon-ok"></i> Save</button>
+			  <button type="button" class="btn">Cancel</button>
+		  </div>
+	  </form>
+	  <!-- END FORM--> 
+  </div>
+</div>       
 
-  <div class="field">
-    <%= f.label :contact %><br>
-    <%= f.text_field :contact %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.text_field :state %>
-  </div>
-  <div class="field">
-    <%= f.label :zip %><br>
-    <%= f.text_field :zip %>
-  </div>
-  <div class="field">
-    <%= f.label :account_id %><br>
-    <%= f.text_field :account_id %>
-  </div>
-  <div class="field">
-    <%= f.label :submission_id %><br>
-    <%= f.text_field :submission_id %>
-  </div>
-  <div class="field">
-    <%= f.label :proposal_id %><br>
-    <%= f.text_field :proposal_id %>
-  </div>
-  <div class="field">
-    <%= f.label :policy %><br>
-    <%= f.text_field :policy %>
-  </div>
-  <div class="field">
-    <%= f.label :references %><br>
-    <%= f.text_field :references %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

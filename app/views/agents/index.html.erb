@@ -1,7 +1,16 @@
+<h3 class="page-title">
+	Insurance Rating<small> demonstration Ruby on Rails project</small>
+</h3>
+<ul class="breadcrumb">
+	<li>
+		<i class="icon-home"></i>
+		<a href="/">Home</a> 
+	</li>
+</ul>
 <h1>Listing agents</h1>
 
-<table>
-  <thead>
+<table class="table-bordered table-striped table-condensed flip-content">
+  <thead class="flip-content">
     <tr>
       <th>Contact</th>
       <th>Name</th>
@@ -9,11 +18,6 @@
       <th>City</th>
       <th>State</th>
       <th>Zip</th>
-      <th>Account</th>
-      <th>Submission</th>
-      <th>Proposal</th>
-      <th>Policy</th>
-      <th>References</th>
       <th></th>
       <th></th>
       <th></th>
@@ -29,11 +33,6 @@
         <td><%= agent.city %></td>
         <td><%= agent.state %></td>
         <td><%= agent.zip %></td>
-        <td><%= agent.account %></td>
-        <td><%= agent.submission %></td>
-        <td><%= agent.proposal %></td>
-        <td><%= agent.policy %></td>
-        <td><%= agent.references %></td>
         <td><%= link_to 'Show', agent %></td>
         <td><%= link_to 'Edit', edit_agent_path(agent) %></td>
         <td><%= link_to 'Destroy', agent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
