@@ -1,44 +1,89 @@
+<h3 class="page-title">
+	<%= @submission.risk.risk %><small> <%= (@submission.account.name).upcase.first(4)<< ((@submission.created_at).strftime("%m%d%M%S%l")) %></small>
+</h3>
+<ul class="breadcrumb">
+	<li>
+		<i class="icon-home"></i>
+		<a href="/">Home</a> 
+		<i class="icon-angle-left"></i>
+	</li>
+	<li>
+		<a href="agents"><%= @submission.agent.name %></a>
+		<i class="icon-angle-left"></i>
+	</li>
+	<li>
+		<a href="accounts"><%= @submission.account.name %></a>
+	</li>
+	<li class="pull-right no-text-shadow">
+		<div id="dashboard-report-range" class="dashboard-date-range tooltips no-tooltip-on-touch-device responsive" data-tablet="" data-placement="top">
+			<i class="icon-calendar"></i>
+			<span>Eff Date <%= @submission.eff_date %> - Exp Date <%= @submission.exp_date %></span>
+</ul>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Sub no:</strong>
-  <%= @submission.sub_no %>
-</p>
+<!-- BEGIN Portlet PORTLET-->
 
-<p>
-  <strong>Eff date:</strong>
-  <%= @submission.eff_date %>
-</p>
+<div class="row-fluid">
+	<div class="responsive span4" data-tablet="span6" data-desktop="span3">
+		<div class="dashboard-stat green">
+			<div class="visual">
+			</div>
+			<div class="details">
+				<div class="number"><%= number_to_currency(@submission.risk.premium) %></div>
+				<div class="desc">Premium</div>
+			</div>
+			<div class="prem-list">
+				<a class="more" rel='popover' data-placement='bottom' href="#">
+					Itemized Break-Out
+					<i class="m-icon-swapright m-icon-white"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="responsive span4" data-tablet="span6" data-desktop="span3">
+		<div class="dashboard-stat yellow">
+			<div class="visual">
+			</div>
+			<div class="details">
+				<div class="number"><%= number_to_currency(@submission.risk.limit) %></div>
+				<div class="desc">Limits</div>
+			</div>
+			<div class="limits-list">
+				<a class="more" data-toggle='popover' data-placement='bottom' href="#">
+					Itemized Break-Out
+					<i class="m-icon-swapright m-icon-white"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="responsive span4" data-tablet="span6" data-desktop="span3">
+		<div class="dashboard-stat blue">
+			<div class="visual">
+			</div>
+			<div class="details">
+				<div class="number"><%= number_to_currency(@submission.risk.deductible) %></div>
+				<div class="desc">Deductible</div>
+			</div>
+			<div class="ded-list">
+				<a class="more" rel='popover' data-placement='bottom' href="#">
+					Itemized Break-Out
+					<i class="m-icon-swapright m-icon-white"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
 
-<p>
-  <strong>Exp date:</strong>
-  <%= @submission.exp_date %>
-</p>
-
-<p>
-  <strong>Agent:</strong>
-  <%= @submission.agent %>
-</p>
-
-<p>
-  <strong>Account:</strong>
-  <%= @submission.account %>
-</p>
-
-<p>
-  <strong>Policy:</strong>
-  <%= @submission.policy %>
-</p>
-
-<p>
-  <strong>Proposal:</strong>
-  <%= @submission.proposal %>
-</p>
-
-<p>
-  <strong>Risk:</strong>
-  <%= @submission.risk %>
-</p>
+<div class="row-fluid">
+	<div class="span12 ">
+		 <%= render 'shared/proposals/proposal' %>
+	</div>
+</div>
+			
 
 <%= link_to 'Edit', edit_submission_path(@submission) %> |
 <%= link_to 'Back', submissions_path %>
+
+

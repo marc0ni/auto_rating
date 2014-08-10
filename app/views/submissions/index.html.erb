@@ -1,17 +1,22 @@
+<h3 class="page-title">
+	Insurance Rating<small> demonstration Ruby on Rails project</small>
+</h3>
+<ul class="breadcrumb">
+	<li>
+		<i class="icon-home"></i>
+		<a href="/">Home</a> 
+	</li>
+</ul>
 <h1>Listing submissions</h1>
 
-<table>
-  <thead>
+<table class="table-bordered table-striped table-condensed flip-content">
+  <thead class="flip-content">
     <tr>
-      <th>Sub no</th>
-      <th>Eff date</th>
-      <th>Exp date</th>
+      <th>Effective date</th>
+      <th>Expiration date</th>
+      <th>Risk</th>
       <th>Agent</th>
       <th>Account</th>
-      <th>Policy</th>
-      <th>Proposal</th>
-      <th>Risk</th>
-      <th></th>
       <th></th>
       <th></th>
     </tr>
@@ -20,14 +25,11 @@
   <tbody>
     <% @submissions.each do |submission| %>
       <tr>
-        <td><%= submission.sub_no %></td>
         <td><%= submission.eff_date %></td>
         <td><%= submission.exp_date %></td>
-        <td><%= submission.agent %></td>
-        <td><%= submission.account %></td>
-        <td><%= submission.policy %></td>
-        <td><%= submission.proposal %></td>
-        <td><%= submission.risk %></td>
+        <td><%= submission.risk.risk %></td>
+        <td><%= submission.agent.name %></td>
+        <td><%= submission.account.name %></td>
         <td><%= link_to 'Show', submission %></td>
         <td><%= link_to 'Edit', edit_submission_path(submission) %></td>
         <td><%= link_to 'Destroy', submission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
