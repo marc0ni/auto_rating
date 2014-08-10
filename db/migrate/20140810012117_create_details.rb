@@ -5,7 +5,7 @@ class CreateDetails < ActiveRecord::Migration
       t.string :make
       t.string :model
       t.string :year
-      t.decimal :cost_new
+      t.decimal :cost_new, precision: 8, scale: 2
       t.string :age_group
       t.string :territory
       t.string :size_class
