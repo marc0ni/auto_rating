@@ -1,16 +1,24 @@
+<h3 class="page-title">
+	Insurance Rating<small> demonstration Ruby on Rails project</small>
+</h3>
+<ul class="breadcrumb">
+	<li>
+		<i class="icon-home"></i>
+		<a href="/">Home</a> 
+	</li>
+</ul>
 <h1>Listing risks</h1>
 
-<table>
-  <thead>
+<table class="table-bordered table-striped table-condensed flip-content">
+  <thead class="flip-content">
     <tr>
-      <th>Risk</th>
+      <th>Details Partial</th>
+      <th>Limits Partial</th>
+      <th>Deductibles Partial</th>
+	  <th>Risk</th>
       <th>Premium</th>
       <th>Deductible</th>
       <th>Limit</th>
-      <th>Submission</th>
-      <th>Limits</th>
-      <th>Deductibles</th>
-      <th>Details</th>
       <th></th>
       <th></th>
       <th></th>
@@ -20,14 +28,13 @@
   <tbody>
     <% @risks.each do |risk| %>
       <tr>
-        <td><%= risk.risk %></td>
-        <td><%= risk.premium %></td>
-        <td><%= risk.deductible %></td>
-        <td><%= risk.limit %></td>
-        <td><%= risk.submission %></td>
-        <td><%= risk.limits %></td>
-        <td><%= risk.deductibles %></td>
-        <td><%= risk.details %></td>
+        <td><%= details.partial %></td>
+        <td><%= limits.partial %></td>
+        <td><%= deductibles.partial %></td>
+		<td><%= risk.risk %></td>
+        <td><%= number_to_currency(risk.premium) %></td>
+        <td><%= number_to_currency(risk.deductible) %></td>
+        <td><%= number_to_currency(risk.limit) %></td>
         <td><%= link_to 'Show', risk %></td>
         <td><%= link_to 'Edit', edit_risk_path(risk) %></td>
         <td><%= link_to 'Destroy', risk, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,44 +1,102 @@
+<h3 class="page-title">
+	Insurance Rating<small> demonstration Ruby on Rails project</small>
+</h3>
+<ul class="breadcrumb">
+	<li>
+		<i class="icon-home"></i>
+		<a href="/">Home</a> 
+	</li>
+</ul>
 <p id="notice"><%= notice %></p>
+<div class="form-horizontal form-view">
+	<h3> View Risk Info -  <%= @risk.risk %> </h3>
+	<div class="row-fluid">
+		<div class="span3 ">
+			<div class="control-group">
+				<label class="control-label" for="firstName">Details Partial:
+ </label>
+				<div class="controls">
+					<span class="text"> <%= @details.partial %></span>
+				</div>
+			</div>
+		</div>
+		<!--/span-->
+		<div class="span3 ">
+			<div class="control-group">
+				<label class="control-label" for="lastName">Limits Partial:</label>
+				<div class="controls">
+					<span class="text"> <%= @limits.partial %></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--/span-->
+	<div class="row-fluid">
+		<div class="span3 ">
+			<div class="control-group">
+				<label class="control-label" for="lastName">Deductibles Partial:</label>
+				<div class="controls">
+					<span class="text"> <%= @deductibles.partial %></span>
+				</div>
+			</div>
+		</div>
+		<!--/span-->
+		<div class="span3 ">
+			<div class="control-group">
+				<label class="control-label" for="lastName">Details ID:</label>
+				<div class="controls">
+					<span class="text"> <%= @risk.details %></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+		<div class="row-fluid">
+			<div class="span3 ">
+				<div class="control-group">
+					<label class="control-label" for="firstName">Risk:
+	 </label>
+					<div class="controls">
+						<span class="text"> <%= @risk.risk %></span>
+					</div>
+				</div>
+			</div>
+			<!--/span-->
+			<div class="span3 ">
+				<div class="control-group">
+					<label class="control-label" for="lastName">Premium:</label>
+					<div class="controls">
+						<span class="text"> <%= number_to_currency (@risk.premium) %></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/span-->
+		<div class="row-fluid">
+			<div class="span3 ">
+				<div class="control-group">
+					<label class="control-label" for="lastName">Limits:</label>
+					<div class="controls">
+						<span class="text"> <%= number_to_currency (@risk.limit) %></span>
+					</div>
+				</div>
+			</div>
+			<!--/span-->
+			<div class="span3 ">
+				<div class="control-group">
+					<label class="control-label" for="lastName">Deductible:</label>
+					<div class="controls">
+						<span class="text"> <%= number_to_currency (@risk.deductible)%></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>		
 
-<p>
-  <strong>Risk:</strong>
-  <%= @risk.risk %>
 </p>
 
-<p>
-  <strong>Premium:</strong>
-  <%= @risk.premium %>
-</p>
-
-<p>
-  <strong>Deductible:</strong>
-  <%= @risk.deductible %>
-</p>
-
-<p>
-  <strong>Limit:</strong>
-  <%= @risk.limit %>
-</p>
-
-<p>
-  <strong>Submission:</strong>
-  <%= @risk.submission %>
-</p>
-
-<p>
-  <strong>Limits:</strong>
-  <%= @risk.limits %>
-</p>
-
-<p>
-  <strong>Deductibles:</strong>
-  <%= @risk.deductibles %>
-</p>
-
-<p>
-  <strong>Details:</strong>
-  <%= @risk.details %>
-</p>
 
 <%= link_to 'Edit', edit_risk_path(@risk) %> |
 <%= link_to 'Back', risks_path %>
+
