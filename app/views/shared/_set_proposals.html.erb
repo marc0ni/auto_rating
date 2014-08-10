@@ -1,0 +1,19 @@
+<% content for :proposals do %>
+
+	<% if @submission.risk.risk == "private passenger"%>
+		<%= render_partial 'shared/proposals/proposals', 'territory' => territory, 'age_group' => age_group, 'cost_new' => cost_new, 'make' => make, 'model' => model, 'year' => year}, :layout => "proposal_pp" %>
+
+	<% elsif @submission.risk.risk == "trailer"%>
+		<%= render :partial => "shared/proposals/proposals", locals: {:territory => @submission.territory, :radius_class =>  @submission.radius_class, :model => @submission.model, :cost_new => @submission.cost_new, :age_group => @submission.age_group, :load_capacity => @submission.load_capacity}, :layout => "detail_trailer" %>
+	
+	<% elsif @submission.risk.risk == "truck"%>
+		<%= render :partial => "shared/proposals/proposals", :locals => {:territory => @submission.territory, :business_use => @submission.business_use, :fleet_nonfleet => @submission.fleet_nonfleet, :make => @submission.make, :model => @submission.model, :year => @submission.year, :cost_new => @submission.cost_new, :age_group => @submission.age_group, :size_class => @submission.size_class, :radius_class => @submission.radius_class, :gvw => @submission.gvw, :gcw => @submission.gcw }, :layout => "detail_truck" %>
+	
+	<% else @submission.risk.risk == "truck tractor"%>
+		<%= render :partial => "shared/proposals/proposals", locals: {territory: @submission.territory, business_use: @submission.business_use, fleet_nonfleet: @submission.fleet_nonfleet, make: @submission.make, model: @submission.model, cost_new: @submission.cost_new, age_group: @submission.age_group,  size_class: @submission.size_class, radius_class: @submission.radius_class, gvw: @submission.gvw, gcw: @submission.gcw} layout:"detail_truck_tractor" %>
+	
+	<% end %>
+	
+	
+	
+<% end %>

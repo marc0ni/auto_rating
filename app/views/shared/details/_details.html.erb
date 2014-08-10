@@ -1,0 +1,25 @@
+<%= form_for :details, remote: true  do |f|%>
+
+	<form action="#" class="form-horizontal">
+		
+		<% if @submission.risk.risk == "Private Passenger"%>
+			<%= render "shared/details/private_passenger", :collection => @details %>
+		
+		<% elsif @submission.risk == "Truck"%>
+			<%= render :partial => "details/truck", :collection => @details %>
+			
+		<% elsif @submission.risk == "Truck Tractor"%>
+			<%= render :partial => "details/truck_tractor", :collection => @details %>
+			
+		<% else %>
+			<%= render :partial => "details/trailer", :collection => @details %>
+			
+		<% end %>
+		
+		<div class="form-actions">
+			<button type="submit" class="btn blue", details_path(submission_id: submission)><i class="icon-ok"></i> Save</button>
+			<button type="button" class="btn">Cancel</button>
+		</div>
+	</form>
+
+<% end %>

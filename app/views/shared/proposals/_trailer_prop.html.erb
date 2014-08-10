@@ -1,0 +1,110 @@
+<%= form_for :trailer_prop, remote: true do |f|%>
+<div class="container-fluid">
+	<!-- BEGIN FORM-->
+	<form action="#" class="form-horizontal">
+		<div class="row-fluid">
+  
+  <div class="form-horizontal form-view">
+  	<h3 class="form-section">Address</h3>
+  	<div class="row-fluid">
+  		<div class="span12 ">
+  			<div class="control-group">
+  				<label class="control-label" >Street:</label>
+  				<div class="controls">
+  					<span class="text"><%= @submission.account.address %></span>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  	<div class="row-fluid">
+  		<div class="span3 ">
+  			<div class="control-group">
+  				<label class="control-label" >City:</label>
+  				<div class="controls">
+  					<span class="text"><%= @submission.account.city %></span>
+  				</div>
+  			</div>
+  		</div>
+  		<!--/span-->
+  		<div class="span3">
+  			<div class="control-group">
+  				<label class="control-label" >State:</label>
+  				<div class="controls">
+  					<span class="text"><%= @submission.account.state %></span>
+  				</div>
+  			</div>
+  		</div>
+  		<!--/span-->
+  		<div class="span3 ">
+  			<div class="control-group">
+  				<label class="control-label" >Post Code:</label>
+  				<div class="controls">
+  					<span class="text"><%= @submission.account.zip %></span>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+	
+  	<h3 class="form-section">Risk Detail</h3>
+  	<div class="row-fluid">
+			<div class="span4 ">
+				<div class="control-group">
+					<label class="control-label">Territory Code:</label>
+					<div class="controls">
+						<span class="text"><%= @submission.detail.territory %></span>
+					</div>
+				</div>
+			</div>
+			<!--span-->
+			<div class="span4 ">
+				<div class="control-group">
+					<label class="control-label" >Radius Class:</label>
+					<div class="controls">
+						<select class="m-wrap span12"
+						<span class="text"><%= @submission.detail.radius_class %></span>
+					</div>
+				</div>
+			</div>
+			<!--span-->
+			<div class="span4 ">
+				<div class="control-group">
+					<label class="control-label">Model Year:</label>
+					<div class="controls">
+						<span class="text"><%= @submission.detail.year %></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/row 2-->
+		<div class="row-fluid">
+			<div class="span4 ">
+				<div class="control-group">
+					<label class="control-label">Cost New:</label>
+					<div class="controls">
+						<span class="text"><%= number_to_currency(@submission.detail.cost_new) %></span>
+					</div>
+				</div>
+			</div>
+			<!--/span-->
+			<div class="span4 ">
+				<div class="control-group">
+					<label class="control-label">Age Group:</label>
+					<div class="controls">
+						<span class="text"><%= @submission.detail.age_group %></span>
+					</div>
+				</div>
+			</div>
+			<!--span-->
+			<div class="span4 ">
+				<div class="control-group">
+					<label class="control-label">Load Capacity:</label>
+					<div class="controls">
+						<span class="text"><%= @submission.detail.load_capacity %></span>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>	
+  </div>
+
+<% end %>
