@@ -1,13 +1,26 @@
+<h3 class="page-title">
+	Insurance Rating<small> demonstration Ruby on Rails project</small>
+</h3>
+<ul class="breadcrumb">
+	<li>
+		<i class="icon-home"></i>
+		<a href="/">Home</a>
+		<i class="icon-angle-left"></i> 
+	</li>
+	<li>
+		<a href="/accounts">Accounts List</a>
+	</li>
+</ul>
 <h1>Listing deductibles</h1>
 
-<table>
-  <thead>
+<table class="table-bordered table-striped table-condensed flip-content">
+  <thead class="flip-content">
     <tr>
-      <th>Partial</th>
-      <th>Spec causes</th>
-      <th>Comp</th>
-      <th>Coll</th>
-      <th>Risk</th>
+      <th>Partials</th>
+	  <th>Specified Causes</th>
+      <th>Comprehensive</th>
+      <th>Collision</th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,10 +31,9 @@
     <% @deductibles.each do |deductible| %>
       <tr>
         <td><%= deductible.partial %></td>
-        <td><%= deductible.spec_causes %></td>
-        <td><%= deductible.comp %></td>
-        <td><%= deductible.coll %></td>
-        <td><%= deductible.risk %></td>
+        <td><%= number_to_currency(deductible.spec_causes) %></td>
+        <td><%= number_to_currency(deductible.comp) %></td>
+        <td><%= number_to_currency(deductible.coll) %></td>
         <td><%= link_to 'Show', deductible %></td>
         <td><%= link_to 'Edit', edit_deductible_path(deductible) %></td>
         <td><%= link_to 'Destroy', deductible, method: :delete, data: { confirm: 'Are you sure?' } %></td>

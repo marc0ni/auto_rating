@@ -1,29 +1,62 @@
+<h3 class="page-title">
+	Insurance Rating<small> demonstration Ruby on Rails project</small>
+</h3>
+<ul class="breadcrumb">
+	<li>
+		<i class="icon-home"></i>
+		<a href="/">Home</a> 
+	</li>
+</ul>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Partial:</strong>
-  <%= @deductible.partial %>
+<div class="form-horizontal form-view">
+	<h3> View Deductibles Info  </h3>
+	<h3 class="form-section"></h3>
+	<div class="row-fluid">
+		<div class="span6 ">
+			<div class="control-group">
+				<label class="control-label" >Deductible Partial:</label>
+				<div class="controls">
+					<span class="text"><%= @deductible.partial %></span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="span6 ">
+			<div class="control-group">
+				<label class="control-label" >Specified Causes:</label>
+				<div class="controls">
+					<span class="text"><%= number_to_currency(@deductible.spec_causes) %></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row-fluid">
+		<div class="span6 ">
+			<div class="control-group">
+				<label class="control-label" >Comprehensive:</label>
+				<div class="controls">
+					<span class="text"><%= number_to_currency(@deductible.comp) %></span>
+				</div>
+			</div>
+		</div>
+		<!--/span-->
+		<div class="span6">
+			<div class="control-group">
+				<label class="control-label" >Collision:</label>
+				<div class="controls">
+					<span class="text"><%= number_to_currency(@deductible.coll) %></span>
+				</div>
+			</div>
+		</div>
+		<!--/span-->
+	</div>
+</div>
+	
+
 </p>
 
-<p>
-  <strong>Spec causes:</strong>
-  <%= @deductible.spec_causes %>
-</p>
-
-<p>
-  <strong>Comp:</strong>
-  <%= @deductible.comp %>
-</p>
-
-<p>
-  <strong>Coll:</strong>
-  <%= @deductible.coll %>
-</p>
-
-<p>
-  <strong>Risk:</strong>
-  <%= @deductible.risk %>
-</p>
 
 <%= link_to 'Edit', edit_deductible_path(@deductible) %> |
 <%= link_to 'Back', deductibles_path %>
