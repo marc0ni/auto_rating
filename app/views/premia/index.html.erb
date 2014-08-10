@@ -1,12 +1,24 @@
-<h1>Listing premia</h1>
+<h3 class="page-title">
+	Insurance Rating<small> demonstration Ruby on Rails project</small>
+</h3>
+<ul class="breadcrumb">
+	<li>
+		<i class="icon-home"></i>
+		<a href="/">Home</a>
+		<i class="icon-angle-left"></i> 
+	</li>
+	<li>
+		<a href="/accounts">Accounts List</a>
+	</li>
+</ul>
+<h1>Listing Premia</h1>
 
-<table>
-  <thead>
+<table class="table-bordered table-striped table-condensed flip-content">
+  <thead class="flip-content">
     <tr>
-      <th>Comp base</th>
-      <th>Coll base</th>
-      <th>Otc base</th>
-      <th>Risk</th>
+      <th>Comprehensive base</th>
+      <th>Collision base</th>
+      <th>Other than Collision</th>
       <th></th>
       <th></th>
       <th></th>
@@ -19,7 +31,6 @@
         <td><%= premium.comp_base %></td>
         <td><%= premium.coll_base %></td>
         <td><%= premium.otc_base %></td>
-        <td><%= premium.risk %></td>
         <td><%= link_to 'Show', premium %></td>
         <td><%= link_to 'Edit', edit_premium_path(premium) %></td>
         <td><%= link_to 'Destroy', premium, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,24 +1,50 @@
+<h3 class="page-title">
+	Auto Rating<small> demonstration Ruby on Rails project</small>
+</h3>
+<ul class="breadcrumb">
+	<li>
+		<i class="icon-home"></i>
+		<a href="/">Home</a> 
+	</li>
+</ul>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Comp base:</strong>
-  <%= @premium.comp_base %>
-</p>
+<div class="form-horizontal form-view">
+	<h3> View Premium Info </h3>
+	<h3 class="form-section">Agent Info</h3>
+	<div class="row-fluid">
+		<div class="span4 ">
+			<div class="control-group">
+				<label class="control-label" for="firstName">Comprehensive:
+				</label>
+				<div class="controls">
+					<span class="text"><%= number_to_currency(@premium.comp_base ) %></span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="span4 ">
+			<div class="control-group">
+				<label class="control-label" for="firstName">Collision:
+				</label>
+				<div class="controls">
+					<span class="text"><%= number_to_currency(@premium.coll_base ) %></span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="span4 ">
+			<div class="control-group">
+				<label class="control-label" for="firstName">Other than Collision:
+				</label>
+				<div class="controls">
+					<span class="text"><%= number_to_currency(@premium.otc_base ) %></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
-<p>
-  <strong>Coll base:</strong>
-  <%= @premium.coll_base %>
-</p>
-
-<p>
-  <strong>Otc base:</strong>
-  <%= @premium.otc_base %>
-</p>
-
-<p>
-  <strong>Risk:</strong>
-  <%= @premium.risk %>
-</p>
 
 <%= link_to 'Edit', edit_premium_path(@premium) %> |
 <%= link_to 'Back', premia_path %>
