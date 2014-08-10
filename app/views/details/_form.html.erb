@@ -10,72 +10,165 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="container-fluid">
+	  <!-- BEGIN FORM-->
+	  <form action="#" class="form-horizontal">
+		  <h3 class="form-section">All Vehicles Info</h3>
+		  <div class="row-fluid">
+			  
+			  <div class="span3 ">
+				  <div class="control-group">
+					  <label class="control-label" for="lastName">Partial:
+					  </label>
+					  <div class="controls">
+						  <input type="text" class="m-wrap span12"<%= f.text_field :partial %>
+					  </div>
+				  </div>
+			  </div>
+			  
+			  <div class="span3 ">
+				  <div class="control-group">
+					  <label class="control-label">Make</label>
+					  <div class="controls">
+						  <input type="text" class="m-wrap span12" <%= f.text_field :make %> 
+					  </div>
+				  </div>
+			  </div> 
+			  <!--/span-->
+			  <div class="span3 ">
+				  <label class="control-label">Model</label>
+				  <div class="controls">
+					  <input type="text" class="m-wrap span12"<%= f.text_field :model%>
+				  </div>
+			  </div>
+		  </div>
+		  <!--/row-->
+		  <div class="row-fluid">
+			  <div class="span3 ">
+				  <div class="control-group">
+					  <label class="control-label">Model Year</label>
+					  <div class="controls">
+						  <input type="text" class="m-wrap span12"<%= f.text_field :year %>
+					  </div>
+				  </div>
+			  </div>
+			  <!--/row-->
+			  <div class="span3 ">
+				  <div class="control-group">
+					  <label class="control-label">Cost New</label>
+					  <div class="controls">
+						   <input type="text" class="m-wrap span12"<%= f.text_field :cost_new %>
+					  </div>
+				  </div>
+			  </div>
+			  <!--/span-->
+			  <div class="span3 ">
+				  <div class="control-group">
+					  <label class="control-label">Age Group</label>
+					  <div class="controls">
+						  <input type="text" class="m-wrap span12" <%= f.text_field :age_group %>
+					  </div>
+				  </div>
+			  </div>
+			  <!--/span-->
+			  <div class="span3 ">
+				  <div class="control-group">
+					  <label class="control-label">Territory</label>
+					  <div class="controls">
+						  <input type="text" class="m-wrap span12" <%= f.text_field :territory %>
+					  </div>
+				  </div>
+			  </div>
+		  </div>
+	  
+		  
+		  <h3 class="form-section">Trucks, Truck-Tractors, and Trailers Info</h3>
+			  <div class="row-fluid">
+				  <div class="span3 ">
+					  <div class="control-group">
+						  <label class="control-label">Size Class</label>
+						  <div class="controls">
+							  <input type="text" class="m-wrap span12"<%= f.text_field :size_class %>
+						  </div>
+					  </div>
+				  </div>
+				  <!--/span-->
+				  <div class="span3 ">
+					  <div class="control-group">
+						  <label class="control-label">Load Capacity</label>
+						  <div class="controls">
+							  <input type="text" class="m-wrap span12" <%= f.text_field :load_capacity  %>
+						  </div>
+					  </div>
+				  </div>
+				  <!--/span-->
+				  <div class="span3 ">
+					  <div class="control-group">
+						  <label class="control-label">Fleet/Non-fleet</label>
+						  <div class="controls">
+							  <input type="text" class="m-wrap span12" <%= f.text_field :fleet_nonfleet %>
+						  </div>
+					  </div>
+				  </div>
+				  
+				  <div class="span3 ">
+					  <div class="control-group">
+						  <label class="control-label">Specified Causes</label>
+						  <div class="controls">
+							  <input type="text" class="m-wrap span12" <%= f.text_field :spec_causes %>
+						  </div>
+					  </div>
+				  </div>
+			  </div>
+			  
+			  
+			  <div class="row-fluid">
+				  <div class="span3 ">
+					  <div class="control-group">
+						  <label class="control-label">GVW </label>
+						  <div class="controls">
+							  <input type="text" class="m-wrap span12"<%= f.text_field :gvw %>
+						  </div>
+					  </div>
+				  </div>
+				  <!--/span-->
+				  <div class="span3 ">
+					  <div class="control-group">
+						  <label class="control-label">GCW </label>
+						  <div class="controls">
+							  <input type="text" class="m-wrap span12" <%= f.text_field :gcw %>
+						  </div>
+					  </div>
+				  </div>
+				  <!--/span-->
+				  <div class="span3 ">
+					  <div class="control-group">
+						  <label class="control-label">Business Use</label>
+						  <div class="controls">
+							  <input type="text" class="m-wrap span12" <%= f.text_field :business_use%>
+						  </div>
+					  </div>
+				  </div>
+				  
+				  <div class="span3 ">
+					  <div class="control-group">
+						  <label class="control-label">Radius Class</label>
+						  <div class="controls">
+							  <input type="text" class="m-wrap span12" <%= f.text_field :radius_class %>
+						  </div>
+					  </div>
+				  </div>
+			  </div>
+			  
+	  		  <!--/row-->
+	  		  <div class="form-actions">
+	  			  <button type="submit" class="btn blue"><i class="icon-ok"></i> Save</button>
+	  			  <button type="button" class="btn">Cancel</button>
+	  		  </div>
+			  
+		  </div>
+	  </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :partial %><br>
-    <%= f.text_field :partial %>
-  </div>
-  <div class="field">
-    <%= f.label :make %><br>
-    <%= f.text_field :make %>
-  </div>
-  <div class="field">
-    <%= f.label :model %><br>
-    <%= f.text_field :model %>
-  </div>
-  <div class="field">
-    <%= f.label :year %><br>
-    <%= f.text_field :year %>
-  </div>
-  <div class="field">
-    <%= f.label :cost_new %><br>
-    <%= f.text_field :cost_new %>
-  </div>
-  <div class="field">
-    <%= f.label :age_group %><br>
-    <%= f.text_field :age_group %>
-  </div>
-  <div class="field">
-    <%= f.label :territory %><br>
-    <%= f.text_field :territory %>
-  </div>
-  <div class="field">
-    <%= f.label :size_class %><br>
-    <%= f.text_field :size_class %>
-  </div>
-  <div class="field">
-    <%= f.label :load_capacity %><br>
-    <%= f.text_field :load_capacity %>
-  </div>
-  <div class="field">
-    <%= f.label :fleet_nonfleet %><br>
-    <%= f.text_field :fleet_nonfleet %>
-  </div>
-  <div class="field">
-    <%= f.label :spec_causes %><br>
-    <%= f.text_field :spec_causes %>
-  </div>
-  <div class="field">
-    <%= f.label :gvw %><br>
-    <%= f.text_field :gvw %>
-  </div>
-  <div class="field">
-    <%= f.label :gcw %><br>
-    <%= f.text_field :gcw %>
-  </div>
-  <div class="field">
-    <%= f.label :business_use %><br>
-    <%= f.text_field :business_use %>
-  </div>
-  <div class="field">
-    <%= f.label :radius_class %><br>
-    <%= f.text_field :radius_class %>
-  </div>
-  <div class="field">
-    <%= f.label :risk_id %><br>
-    <%= f.text_field :risk_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
