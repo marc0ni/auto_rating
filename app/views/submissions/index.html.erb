@@ -1,0 +1,41 @@
+<h1>Listing submissions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sub no</th>
+      <th>Eff date</th>
+      <th>Exp date</th>
+      <th>Agent</th>
+      <th>Account</th>
+      <th>Policy</th>
+      <th>Proposal</th>
+      <th>Risk</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @submissions.each do |submission| %>
+      <tr>
+        <td><%= submission.sub_no %></td>
+        <td><%= submission.eff_date %></td>
+        <td><%= submission.exp_date %></td>
+        <td><%= submission.agent %></td>
+        <td><%= submission.account %></td>
+        <td><%= submission.policy %></td>
+        <td><%= submission.proposal %></td>
+        <td><%= submission.risk %></td>
+        <td><%= link_to 'Show', submission %></td>
+        <td><%= link_to 'Edit', edit_submission_path(submission) %></td>
+        <td><%= link_to 'Destroy', submission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Submission', new_submission_path %>

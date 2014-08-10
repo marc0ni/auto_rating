@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  partial: MyString
+  spec_causes: 9.99
+  comp: MyString
+  coll: MyString
+  risk_id: 
+
+two:
+  partial: MyString
+  spec_causes: 9.99
+  comp: MyString
+  coll: MyString
+  risk_id: 

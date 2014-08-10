@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Partial:</strong>
+  <%= @deductible.partial %>
+</p>
+
+<p>
+  <strong>Spec causes:</strong>
+  <%= @deductible.spec_causes %>
+</p>
+
+<p>
+  <strong>Comp:</strong>
+  <%= @deductible.comp %>
+</p>
+
+<p>
+  <strong>Coll:</strong>
+  <%= @deductible.coll %>
+</p>
+
+<p>
+  <strong>Risk:</strong>
+  <%= @deductible.risk %>
+</p>
+
+<%= link_to 'Edit', edit_deductible_path(@deductible) %> |
+<%= link_to 'Back', deductibles_path %>

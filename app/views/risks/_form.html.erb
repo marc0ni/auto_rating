@@ -1,0 +1,49 @@
+<%= form_for(@risk) do |f| %>
+  <% if @risk.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@risk.errors.count, "error") %> prohibited this risk from being saved:</h2>
+
+      <ul>
+      <% @risk.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :risk %><br>
+    <%= f.text_field :risk %>
+  </div>
+  <div class="field">
+    <%= f.label :premium %><br>
+    <%= f.number_field :premium %>
+  </div>
+  <div class="field">
+    <%= f.label :deductible %><br>
+    <%= f.number_field :deductible %>
+  </div>
+  <div class="field">
+    <%= f.label :limit %><br>
+    <%= f.number_field :limit %>
+  </div>
+  <div class="field">
+    <%= f.label :submission_id %><br>
+    <%= f.text_field :submission_id %>
+  </div>
+  <div class="field">
+    <%= f.label :limits_id %><br>
+    <%= f.text_field :limits_id %>
+  </div>
+  <div class="field">
+    <%= f.label :deductibles_id %><br>
+    <%= f.text_field :deductibles_id %>
+  </div>
+  <div class="field">
+    <%= f.label :details_id %><br>
+    <%= f.text_field :details_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

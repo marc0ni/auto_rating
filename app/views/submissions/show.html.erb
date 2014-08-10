@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sub no:</strong>
+  <%= @submission.sub_no %>
+</p>
+
+<p>
+  <strong>Eff date:</strong>
+  <%= @submission.eff_date %>
+</p>
+
+<p>
+  <strong>Exp date:</strong>
+  <%= @submission.exp_date %>
+</p>
+
+<p>
+  <strong>Agent:</strong>
+  <%= @submission.agent %>
+</p>
+
+<p>
+  <strong>Account:</strong>
+  <%= @submission.account %>
+</p>
+
+<p>
+  <strong>Policy:</strong>
+  <%= @submission.policy %>
+</p>
+
+<p>
+  <strong>Proposal:</strong>
+  <%= @submission.proposal %>
+</p>
+
+<p>
+  <strong>Risk:</strong>
+  <%= @submission.risk %>
+</p>
+
+<%= link_to 'Edit', edit_submission_path(@submission) %> |
+<%= link_to 'Back', submissions_path %>

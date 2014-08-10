@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @agent.contact %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @agent.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @agent.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @agent.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @agent.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @agent.zip %>
+</p>
+
+<p>
+  <strong>Account:</strong>
+  <%= @agent.account %>
+</p>
+
+<p>
+  <strong>Submission:</strong>
+  <%= @agent.submission %>
+</p>
+
+<p>
+  <strong>Proposal:</strong>
+  <%= @agent.proposal %>
+</p>
+
+<p>
+  <strong>Policy:</strong>
+  <%= @agent.policy %>
+</p>
+
+<p>
+  <strong>References:</strong>
+  <%= @agent.references %>
+</p>
+
+<%= link_to 'Edit', edit_agent_path(@agent) %> |
+<%= link_to 'Back', agents_path %>

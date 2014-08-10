@@ -1,0 +1,35 @@
+<h1>Listing deductibles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Partial</th>
+      <th>Spec causes</th>
+      <th>Comp</th>
+      <th>Coll</th>
+      <th>Risk</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @deductibles.each do |deductible| %>
+      <tr>
+        <td><%= deductible.partial %></td>
+        <td><%= deductible.spec_causes %></td>
+        <td><%= deductible.comp %></td>
+        <td><%= deductible.coll %></td>
+        <td><%= deductible.risk %></td>
+        <td><%= link_to 'Show', deductible %></td>
+        <td><%= link_to 'Edit', edit_deductible_path(deductible) %></td>
+        <td><%= link_to 'Destroy', deductible, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Deductible', new_deductible_path %>

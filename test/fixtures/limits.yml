@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  partial: MyString
+  bipd: MyString
+  medical: MyString
+  risk_id: 
+
+two:
+  partial: MyString
+  bipd: MyString
+  medical: MyString
+  risk_id: 

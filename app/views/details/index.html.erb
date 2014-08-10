@@ -1,0 +1,57 @@
+<h1>Listing details</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Partial</th>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Year</th>
+      <th>Cost new</th>
+      <th>Age group</th>
+      <th>Territory</th>
+      <th>Size class</th>
+      <th>Load capacity</th>
+      <th>Fleet nonfleet</th>
+      <th>Spec causes</th>
+      <th>Gvw</th>
+      <th>Gcw</th>
+      <th>Business use</th>
+      <th>Radius class</th>
+      <th>Risk</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @details.each do |detail| %>
+      <tr>
+        <td><%= detail.partial %></td>
+        <td><%= detail.make %></td>
+        <td><%= detail.model %></td>
+        <td><%= detail.year %></td>
+        <td><%= detail.cost_new %></td>
+        <td><%= detail.age_group %></td>
+        <td><%= detail.territory %></td>
+        <td><%= detail.size_class %></td>
+        <td><%= detail.load_capacity %></td>
+        <td><%= detail.fleet_nonfleet %></td>
+        <td><%= detail.spec_causes %></td>
+        <td><%= detail.gvw %></td>
+        <td><%= detail.gcw %></td>
+        <td><%= detail.business_use %></td>
+        <td><%= detail.radius_class %></td>
+        <td><%= detail.risk %></td>
+        <td><%= link_to 'Show', detail %></td>
+        <td><%= link_to 'Edit', edit_detail_path(detail) %></td>
+        <td><%= link_to 'Destroy', detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Detail', new_detail_path %>

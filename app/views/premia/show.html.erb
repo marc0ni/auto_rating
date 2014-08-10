@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Comp base:</strong>
+  <%= @premium.comp_base %>
+</p>
+
+<p>
+  <strong>Coll base:</strong>
+  <%= @premium.coll_base %>
+</p>
+
+<p>
+  <strong>Otc base:</strong>
+  <%= @premium.otc_base %>
+</p>
+
+<p>
+  <strong>Risk:</strong>
+  <%= @premium.risk %>
+</p>
+
+<%= link_to 'Edit', edit_premium_path(@premium) %> |
+<%= link_to 'Back', premia_path %>

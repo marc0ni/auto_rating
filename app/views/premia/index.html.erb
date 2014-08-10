@@ -1,0 +1,33 @@
+<h1>Listing premia</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Comp base</th>
+      <th>Coll base</th>
+      <th>Otc base</th>
+      <th>Risk</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @premia.each do |premium| %>
+      <tr>
+        <td><%= premium.comp_base %></td>
+        <td><%= premium.coll_base %></td>
+        <td><%= premium.otc_base %></td>
+        <td><%= premium.risk %></td>
+        <td><%= link_to 'Show', premium %></td>
+        <td><%= link_to 'Edit', edit_premium_path(premium) %></td>
+        <td><%= link_to 'Destroy', premium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Premium', new_premium_path %>

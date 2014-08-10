@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @account.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @account.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @account.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @account.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @account.zip %>
+</p>
+
+<p>
+  <strong>Agent:</strong>
+  <%= @account.agent %>
+</p>
+
+<p>
+  <strong>Submission:</strong>
+  <%= @account.submission %>
+</p>
+
+<p>
+  <strong>Proposal:</strong>
+  <%= @account.proposal %>
+</p>
+
+<p>
+  <strong>Policy:</strong>
+  <%= @account.policy %>
+</p>
+
+<%= link_to 'Edit', edit_account_path(@account) %> |
+<%= link_to 'Back', accounts_path %>

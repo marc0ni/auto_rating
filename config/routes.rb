@@ -1,4 +1,24 @@
 AutoRating::Application.routes.draw do
+  resources :submissions
+
+  resources :risks
+
+  resources :proposals
+
+  resources :premia
+
+  resources :policies
+
+  resources :limits
+
+  resources :details
+
+  resources :deductibles
+
+  resources :agents
+
+  resources :accounts
+
   get "provider/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

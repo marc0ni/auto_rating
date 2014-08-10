@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Partial:</strong>
+  <%= @limit.partial %>
+</p>
+
+<p>
+  <strong>Bipd:</strong>
+  <%= @limit.bipd %>
+</p>
+
+<p>
+  <strong>Medical:</strong>
+  <%= @limit.medical %>
+</p>
+
+<p>
+  <strong>Risk:</strong>
+  <%= @limit.risk %>
+</p>
+
+<%= link_to 'Edit', edit_limit_path(@limit) %> |
+<%= link_to 'Back', limits_path %>

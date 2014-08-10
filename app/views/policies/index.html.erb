@@ -1,0 +1,37 @@
+<h1>Listing policies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Policy no</th>
+      <th>Deductibles</th>
+      <th>Limits</th>
+      <th>Premia</th>
+      <th>Submission</th>
+      <th>Proposal</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @policies.each do |policy| %>
+      <tr>
+        <td><%= policy.policy_no %></td>
+        <td><%= policy.deductibles %></td>
+        <td><%= policy.limits %></td>
+        <td><%= policy.premia %></td>
+        <td><%= policy.submission %></td>
+        <td><%= policy.proposal %></td>
+        <td><%= link_to 'Show', policy %></td>
+        <td><%= link_to 'Edit', edit_policy_path(policy) %></td>
+        <td><%= link_to 'Destroy', policy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Policy', new_policy_path %>

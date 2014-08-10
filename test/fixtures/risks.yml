@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  risk: MyString
+  premium: 1
+  deductible: 1
+  limit: 1
+  submission_id: 
+  limits_id: 
+  deductibles_id: 
+  details_id: 
+
+two:
+  risk: MyString
+  premium: 1
+  deductible: 1
+  limit: 1
+  submission_id: 
+  limits_id: 
+  deductibles_id: 
+  details_id: 

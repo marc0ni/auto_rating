@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  comp_base: 9.99
+  coll_base: 9.99
+  otc_base: 9.99
+  risk_id: 
+
+two:
+  comp_base: 9.99
+  coll_base: 9.99
+  otc_base: 9.99
+  risk_id: 
