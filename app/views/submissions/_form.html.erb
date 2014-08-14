@@ -88,7 +88,15 @@
 					  </div>
 					  <div id="collapse_1" class="accordion-body collapse in" style="height: 0px">
 						  <div class="accordion-inner">
-							<%= render 'shared/details/details' %>
+							  <% if @submission.risk.risk == "private passenger" %>
+							  	<%= render "detail_list", :locals => {:details => details}, layout:"detail_pp" %>
+							  <% elsif @submission.risk.risk == "trailer" %>
+								<%= render "detail_list", :locals => {:details => details}, layout:"detail_trailer" %>
+  							  <% elsif @submission.risk.risk == "truck" %>
+  								<%= render "detail_list", :locals => {:details => details}, layout:"detail_truck" %>
+							  <% else %>
+							  	<%= render "detail_list", :locals => {:details => details}, layout:"detail_truck" %>
+							<% end %>
 						  </div>
 					  </div>
 				  </div>
@@ -101,7 +109,7 @@
 					  </div>
 					  <div id="collapse_2" class="accordion-body collapse" style="height: 0px">
 						  <div class="accordion-inner">
-							 <%= render 'shared/limits/limits' %>
+							 <%= render "limit_list", :locals => {:limits => limits} %>
 						  </div>
 					  </div>
 				  </div>
@@ -114,7 +122,11 @@
 					  </div>
 					  <div id="collapse_3" class="accordion-body collapse" style="height: 0px">
 						  <div class="accordion-inner">
-							<%= render 'shared/deductibles/deductibles' %>
+							  <% if @submission.risk.risk == "private passenger" %>
+							  	<%= render "deductible_list", :locals => {:deductibles => deductibles}, layout:"deductible_pp" %>
+							<% else %>
+								<%= render "deductible_list", :locals => {:deductibles => deductibles}, layout:"deductible_ttt" %>
+							<% end %>
 						  </div>
 					  </div>
 				  </div>

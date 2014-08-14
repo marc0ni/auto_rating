@@ -12,9 +12,6 @@
 <table class="table-bordered table-striped table-condensed flip-content">
   <thead class="flip-content">
     <tr>
-      <th>Details Partial</th>
-      <th>Limits Partial</th>
-      <th>Deductibles Partial</th>
 	  <th>Risk</th>
       <th>Premium</th>
       <th>Deductible</th>
@@ -28,9 +25,6 @@
   <tbody>
     <% @risks.each do |risk| %>
       <tr>
-        <td><%= details.partial %></td>
-        <td><%= limits.partial %></td>
-        <td><%= deductibles.partial %></td>
 		<td><%= risk.risk %></td>
         <td><%= number_to_currency(risk.premium) %></td>
         <td><%= number_to_currency(risk.deductible) %></td>
