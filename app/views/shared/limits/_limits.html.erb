@@ -1,4 +1,4 @@
-<%= form_for :limits  do |f|%>
+<%= form_for :limits, remote: true  do |f|%>
 <div class="container-fluid">
 	<!-- BEGIN FORM-->
 	<form action="#" class="form-horizontal">
@@ -30,6 +30,10 @@
 				<button type="submit" class="btn blue", limits_path(submission_id: submission)><i class="icon-ok"></i> Save</button>
 				<button type="button" class="btn">Cancel</button>
 			</div>
+		</div>
+		<div class="form-actions">
+			<button type="submit" class="btn blue", limits_path(submission_id: submission)><i class="icon-ok"></i> Save</button>
+			<button type="button" class="btn">Cancel</button>
 		</div>
 	</form>
 </div>
