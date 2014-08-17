@@ -1,0 +1,64 @@
+<div class="container-fluid">
+	<!-- BEGIN FORM-->
+	<form action="#" class="form-horizontal">
+		<div class="row-fluid">
+			<!--/span-->
+			<div class="span4 ">
+				<div class="control-group">
+					<label class="control-label">Territory Code</label>
+					<div class="controls">
+						<input type="text" class="m-wrap span12" <%= f.text_field :primary_code %>
+					</div>
+				</div>
+			</div>
+			<!--span-->
+			<div class="span4 ">
+				<div class="control-group">
+					<label class="control-label" >Radius Class</label>
+					<div class="controls">
+						<select class="m-wrap span12"
+						<%= f.select :radius_class, [ '0 - 50 miles', '51-200 miles', 'Over 200 miles' ], :prompt => 'Select One' %></select>
+					</div>
+				</div>
+			</div>
+			<!--span-->
+			<div class="span4 ">
+				<div class="control-group">
+					<label class="control-label">Model Year</label>
+					<div class="controls">
+						<input type="text" class="m-wrap span12" <%= f.text_field :model_year %>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/row 2-->
+		<div class="row-fluid">
+			<div class="span4 ">
+				<div class="control-group">
+					<label class="control-label">Cost New</label>
+					<div class="controls">
+						<input type="text" class="m-wrap span12" <%= f.text_field :cost_new %>
+					</div>
+				</div>
+			</div>
+			<!--/span-->
+			<div class="span4 ">
+				<div class="control-group">
+					<label class="control-label">Age Group</label>
+					<div class="controls">
+						<select class="m-wrap span12"<%= f.select :age_group, [ '1', '2', '3', '4', '5', '6'], :prompt => 'Select One' %></select>
+					</div>
+				</div>
+			</div>
+			<!--span-->
+			<div class="span4 ">
+				<div class="control-group">
+					<label class="control-label">Load Capacity</label>
+					<div class="controls">
+						<input type="text" class="m-wrap span12" <%= f.text_field :load_capacity %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

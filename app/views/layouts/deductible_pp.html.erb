@@ -1,0 +1,28 @@
+<div class="container-fluid">
+	<!-- BEGIN FORM-->
+	<form action="#" class="form-horizontal">
+		<div class="row-fluid">
+			<!--/span-->
+			<div class="span6 ">
+				<div class="control-group">
+					<label class="control-label" >Comprehensive</label>
+					<div class="controls">
+						<select class="m-wrap span12"
+						<%= f.select :comp, [ 'Full', '50', '100'], :prompt => 'Select One' %></select>
+					</div>
+				</div>
+			</div>
+			<!--span-->
+			<div class="span6 ">
+				<div class="control-group">
+					<label class="control-label" >Collision</label>
+					<div class="controls">
+						<select class="m-wrap span12"
+						<%= f.select :coll, [ '100', '200', '250', '1000'], :prompt => 'Select One' %></select>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</form>
+</div>  

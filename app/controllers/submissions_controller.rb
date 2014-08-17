@@ -6,6 +6,60 @@ class SubmissionsController < ApplicationController
   def index
     @submissions = Submission.all
   end
+  
+  def details
+    @input = {"risk_id" => nil, "private_passenger" => nil, "truck" => nil, "truck_tractor" => nil, 
+    "trailer" => nil, "semi_trailer" => nil, "utility_service_trailer" => nil}  
+    @input["risk_id"] = params[:risk_id]  
+    @input["private_passenger"] = params[:private_passenger]  
+    @input["truck"] = params[:truck]
+    @input["truck_tractor"] = params[:truck_tractor]
+    @input["trailer"] = params[:trailer]
+    @input["semi_trailer"] = params[:semi_trailer]     
+    @input["utility_service_trailer"] = params[:utility_service_trailer]   
+    
+    #Whatever your method needs to do, build a query, etc.
+    
+    respond_to do |format|
+      format.js
+    end  
+  end
+  
+  def deductibles
+    @input = {"risk_id" => nil, "private_passenger" => nil, "truck" => nil, "truck_tractor" => nil, 
+    "trailer" => nil, "semi_trailer" => nil, "utility_service_trailer" => nil}  
+    @input["risk_id"] = params[:risk_id]  
+    @input["private_passenger"] = params[:private_passenger]  
+    @input["truck"] = params[:truck]
+    @input["truck_tractor"] = params[:truck_tractor]
+    @input["trailer"] = params[:trailer]
+    @input["semi_trailer"] = params[:semi_trailer]     
+    @input["utility_service_trailer"] = params[:utility_service_trailer]   
+    
+    #Whatever your method needs to do, build a query, etc.
+    
+    respond_to do |format|
+      format.js
+    end   
+  end
+  
+  def limits
+    @input = {"risk_id" => nil, "private_passenger" => nil, "truck" => nil, "truck_tractor" => nil, 
+    "trailer" => nil, "semi_trailer" => nil, "utility_service_trailer" => nil}  
+    @input["risk_id"] = params[:risk_id]  
+    @input["private_passenger"] = params[:private_passenger]  
+    @input["truck"] = params[:truck]
+    @input["truck_tractor"] = params[:truck_tractor]
+    @input["trailer"] = params[:trailer]
+    @input["semi_trailer"] = params[:semi_trailer]     
+    @input["utility_service_trailer"] = params[:utility_service_trailer]   
+    
+    #Whatever your method needs to do, build a query, etc.
+    
+    respond_to do |format|
+      format.js
+    end  
+  end
 
   # GET /submissions/1
   # GET /submissions/1.json

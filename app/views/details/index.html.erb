@@ -27,8 +27,8 @@
       <th>Load capacity</th>
       <th>Fleet nonfleet</th>
       <th>Spec causes</th>
-      <th>Gvw</th>
-      <th>Gcw</th>
+      <th>GVW</th>
+      <th>GCW</th>
       <th>Business use</th>
       <th>Radius class</th>
       <th></th>
@@ -44,7 +44,7 @@
         <td><%= detail.make %></td>
         <td><%= detail.model %></td>
         <td><%= detail.year %></td>
-        <td><%= detail.cost_new %></td>
+        <td><%= number_to_currency(detail.cost_new) %></td>
         <td><%= detail.age_group %></td>
         <td><%= detail.territory %></td>
         <td><%= detail.size_class %></td>

@@ -88,15 +88,7 @@
 					  </div>
 					  <div id="collapse_1" class="accordion-body collapse in" style="height: 0px">
 						  <div class="accordion-inner">
-							  <% if @submission.risk.risk == "private passenger" %>
-							  	<%= render "detail_list", :locals => {:details => details}, layout:"detail_pp" %>
-							  <% elsif @submission.risk.risk == "trailer" %>
-								<%= render "detail_list", :locals => {:details => details}, layout:"detail_trailer" %>
-  							  <% elsif @submission.risk.risk == "truck" %>
-  								<%= render "detail_list", :locals => {:details => details}, layout:"detail_truck" %>
-							  <% else %>
-							  	<%= render "detail_list", :locals => {:details => details}, layout:"detail_truck" %>
-							<% end %>
+							  <% detail_list.each do |detail|%>
 						  </div>
 					  </div>
 				  </div>
@@ -109,7 +101,7 @@
 					  </div>
 					  <div id="collapse_2" class="accordion-body collapse" style="height: 0px">
 						  <div class="accordion-inner">
-							 <%= render "limit_list", :locals => {:limits => limits} %>
+							 <% limit_list.each do |limit|%>
 						  </div>
 					  </div>
 				  </div>
@@ -122,11 +114,7 @@
 					  </div>
 					  <div id="collapse_3" class="accordion-body collapse" style="height: 0px">
 						  <div class="accordion-inner">
-							  <% if @submission.risk.risk == "private passenger" %>
-							  	<%= render "deductible_list", :locals => {:deductibles => deductibles}, layout:"deductible_pp" %>
-							<% else %>
-								<%= render "deductible_list", :locals => {:deductibles => deductibles}, layout:"deductible_ttt" %>
-							<% end %>
+							  <% deductible_list.each do |deductible|%>
 						  </div>
 					  </div>
 				  </div>
