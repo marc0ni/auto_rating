@@ -2,10 +2,10 @@
 	
 <form action="#" class="form-horizontal">
 	<% if @submission.risk == "Private Passenger"%>
-		<%= render :partial => "shared/deductibles/pp_ded", :collection => @deductibles %>
+		<%= render :partial => "shared/deductibles/pp_ded" %>
 		
 	<% else %>
-		<%= render :partial => "shared/deductibles/ttt_ded", :collection => @deductibles %>
+		<%= render :partial => "shared/deductibles/ttt_ded" %>
 		
 	<% end %>
 	<!--/row-->

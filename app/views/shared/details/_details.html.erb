@@ -2,7 +2,7 @@
 
 	<form action="#" class="form-horizontal">
 		
-		<% if @submission.risk.risk == "Private Passenger"%>
+		<% if @submission.risk == "Private Passenger"%>
 			<%= render "shared/details/private_passenger" %>
 		
 		<% elsif @submission.risk == "Truck"%>

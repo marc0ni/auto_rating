@@ -1,7 +1,7 @@
 module SubmissionsHelper
   
   def detail_list
-	  details = Detail.find(:all)
+	  details = Detail.all
     case @submission.risk
       when :private_passenger
         render :partial => "../shared/details/private_passenger", :locals => {:details => details}
@@ -13,7 +13,7 @@ module SubmissionsHelper
   end
   
   def deductible_list
-	  deductibles = Deductible.find(:all)
+	  deductibles = Deductible.all
     if @submission.risk == "private_passenger"
       render :partial => "../shared/deductibles/pp_ded", :locals => { :deductibles => deductibles}
     else
@@ -22,12 +22,12 @@ module SubmissionsHelper
   end
   
   def limit_list
-	  limits = Limit.find(:all)
+	  limits = Limit.all
     render :partial => "../shared/limits/limits", :locals => {:limits => limits}
   end
   
   def proposal_list
-	  proposals = Proposal.find(:all)
+	  proposals = Proposal.all
     case @submission.risk
       when :private_passenger
         render :partial => "../shared/proposals/pp_prop", :locals => {:proposals => proposals}

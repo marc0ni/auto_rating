@@ -30,7 +30,7 @@
     <% @limits.each do |limit| %>
       <tr>
         <td><%= limit.partial %></td>
-		<td><%= number_to_currency(limit.bipd )%></td>
+		<td><%= number_to_currency(limit.bipd)%></td>
         <td><%= number_to_currency(limit.medical) %></td>  
         <td><%= link_to 'Show', limit %></td>
         <td><%= link_to 'Edit', edit_limit_path(limit) %></td>
