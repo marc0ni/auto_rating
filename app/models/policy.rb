@@ -2,7 +2,7 @@ class Policy < ActiveRecord::Base
   belongs_to :deductibles
   belongs_to :limits
   belongs_to :premia
-  has_one :submission
+  belongs_to :submission
   belongs_to :proposal
   
   before_destroy :ensure_not_referenced_by_any_submission

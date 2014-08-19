@@ -1,4 +1,6 @@
 class RisksController < ApplicationController
+  include CurrentSubmission
+  before_action :set_submission, only: [:create]
   before_action :set_risk, only: [:show, :edit, :update, :destroy]
 
   # GET /risks
@@ -24,11 +26,12 @@ class RisksController < ApplicationController
   # POST /risks
   # POST /risks.json
   def create
-    @risk = Risk.new(risk_params)
+    @submission = Submission.find(params[:submission_id])
+    @risk = @submission.risk.build(submission: submission)
 
     respond_to do |format|
       if @risk.save
-        format.html { redirect_to @risk, notice: 'Risk was successfully created.' }
+        format.html { redirect_to @risk.save, notice: 'Risk was successfully created.' }
         format.json { render action: 'show', status: :created, location: @risk }
       else
         format.html { render action: 'new' }

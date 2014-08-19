@@ -1,4 +1,6 @@
 class LimitsController < ApplicationController
+  include CurrentSubmission
+  before_action :set_submission, only: [:create]
   before_action :set_limit, only: [:show, :edit, :update, :destroy]
 
   # GET /limits
@@ -24,11 +26,12 @@ class LimitsController < ApplicationController
   # POST /limits
   # POST /limits.json
   def create
-    @limit = Limit.new(limit_params)
+    submission = Submission.find(params[:submisson_id])
+    @limit = @submission.limit.build(submission: submission)
 
     respond_to do |format|
       if @limit.save
-        format.html { redirect_to @limit, notice: 'Limit was successfully created.' }
+        format.html { redirect_to @limit.submission, notice: 'Limit was successfully created.' }
         format.json { render action: 'show', status: :created, location: @limit }
       else
         format.html { render action: 'new' }

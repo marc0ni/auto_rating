@@ -1,4 +1,6 @@
 class DeductiblesController < ApplicationController
+  include CurrentSubmission
+  before_action :set_submission, only: [:create]
   before_action :set_deductible, only: [:show, :edit, :update, :destroy]
 
   # GET /deductibles
@@ -24,11 +26,12 @@ class DeductiblesController < ApplicationController
   # POST /deductibles
   # POST /deductibles.json
   def create
-    @deductible = Deductible.new(deductible_params)
+    @submission = Submission.find(params[:submission_id])
+    @deductible = @submission.deductible.build(submission: submission)
 
     respond_to do |format|
       if @deductible.save
-        format.html { redirect_to @deductible, notice: 'Deductible was successfully created.' }
+        format.html { redirect_to @deductible.submission, notice: 'Deductible was successfully created.' }
         format.json { render action: 'show', status: :created, location: @deductible }
       else
         format.html { render action: 'new' }

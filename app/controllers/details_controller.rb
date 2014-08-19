@@ -1,4 +1,6 @@
 class DetailsController < ApplicationController
+  include CurrentSubmission
+  before_action :set_submission, only: [:create]
   before_action :set_detail, only: [:show, :edit, :update, :destroy]
 
   # GET /details
@@ -24,11 +26,12 @@ class DetailsController < ApplicationController
   # POST /details
   # POST /details.json
   def create
-    @detail = Detail.new(detail_params)
+    submission = Submission.find(params[:submisson_id])
+    @detail = @submission.detail.build(submission: submission)
 
     respond_to do |format|
       if @detail.save
-        format.html { redirect_to @detail, notice: 'Detail was successfully created.' }
+        format.html { redirect_to @detail.submission, notice: 'Detail was successfully created.' }
         format.json { render action: 'show', status: :created, location: @detail }
       else
         format.html { render action: 'new' }
