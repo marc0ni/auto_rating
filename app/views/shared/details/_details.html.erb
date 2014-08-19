@@ -3,7 +3,7 @@
 	<form action="#" class="form-horizontal">
 		
 		<% if @submission.risk == "Private Passenger"%>
-			<%= render "shared/details/private_passenger" %>
+			<%= render "shared/details/private_passenger"  %>
 		
 		<% elsif @submission.risk == "Truck"%>
 			<%= render :partial => "shared/details/truck" %>
@@ -16,10 +16,6 @@
 			
 		<% end %>
 		
-		<div class="form-actions">
-			<button type="submit" class="btn blue", details_path(submission_id: submission)><i class="icon-ok"></i> Save</button>
-			<button type="button" class="btn">Cancel</button>
-		</div>
 	</form>
 
 <% end %>
