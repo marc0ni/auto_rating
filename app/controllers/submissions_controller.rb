@@ -1,7 +1,6 @@
 class SubmissionsController < ApplicationController
-  include CurrentSubmission
+  
   before_action :set_submission, only: [:show, :edit, :update, :destroy]
-  before_action :set_risk, only: [:show, :edit, :update, :destroy]
 
   # GET /submissions
   # GET /submissions.json

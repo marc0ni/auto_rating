@@ -1,4 +1,6 @@
 class ProposalsController < ApplicationController
+  include CurrentSubmission
+  before_action :set_submission, only: [:create]
   before_action :set_proposal, only: [:show, :edit, :update, :destroy]
 
   # GET /proposals
@@ -24,11 +26,12 @@ class ProposalsController < ApplicationController
   # POST /proposals
   # POST /proposals.json
   def create
+    submission = Submission.find(params[:submission_id])
     @proposal = Proposal.new(proposal_params)
 
     respond_to do |format|
       if @proposal.save
-        format.html { redirect_to @proposal, notice: 'Proposal was successfully created.' }
+        format.html { redirect_to @proposal.submission, notice: 'Proposal was successfully created.' }
         format.json { render action: 'show', status: :created, location: @proposal }
       else
         format.html { render action: 'new' }
