@@ -22,6 +22,7 @@ class DetailsController < ApplicationController
   # GET /details/1/edit
   def edit
   end
+  
 
   # POST /details
   # POST /details.json

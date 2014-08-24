@@ -2,26 +2,25 @@
 
 <form action="#" class="form-horizontal">
 	
-	<% if @submission.risk.risk == "Private Passenger"%>
-		<%= render partial: "shared/proposals/pp_prop" %>
+	<% if @submission.risk == "Private Passenger"%>
+		<%= render partial: "shared/proposals/pp_prop", object: @detail, :locals => {territory: territory, age_group: age_group, cost_new: cost_new, make: make, model: model, year: year}  %>
 		
-	<% elsif @submission.risk.risk == "Truck"%>
-		<%= render "truck_prop", :locals => {:territory => @detail.territory, :business_use => @detail.business_use, :fleet_nonfleet => @detail.fleet_nonfleet, :make => @detail.make, :year => @detail.year, :cost_new => @detail.cost_new, :age_group => @detail.age_group, :size_class => @detail.size_class, :radius_class => @detail.radius_class, :gvw => @detail.gvw, :gcw => @detail.gcw}, layout:'layouts/proposal_truck' %>
+	<% elsif @submission.risk == "Truck"%>
+		<%= render partial: "shared/proposals/truck_prop", object: @detail, :locals => {territory: territory, business_use:  business_use, fleet_nonfleet: fleet_nonfleet, make: make, model:  model, cost_new: cost_new, age_group: age_group, size_class: size_class, radius_class: radius_class, gvw: gvw, gcw: gcw} %>
 			
-		<% elsif @submission.risk.risk == "Truck Tractor" %>
-			<%= render "truck_tractor_prop", :locals => {:territory => @detail.territory, :business_use => @detail.business_use, :fleet_nonfleet => @detail.fleet_nonfleet, :make => @detail.make, :year => @detail.year, :cost_new => @detail.cost_new, :age_group => @detail.age_group, :size_class => @detail.size_class, :radius_class => @detail.radius_class, :gvw => @detail.gvw, :gcw => @detail.gcw}, layout:'layouts/proposal_truck_tractor' %>	
+	<% elsif @submission.risk == "Truck Tractor" %>
+		<%= render partial: "shared/proposals/truck_prop", object: @detail, :locals => {territory: territory, business_use:  business_use, fleet_nonfleet: fleet_nonfleet, make: make, model:  model, cost_new: cost_new, age_group: age_group, size_class: size_class, radius_class: radius_class, gvw: gvw, gcw: gcw} %>
 			
-		<% elsif @submission.risk.risk == "Trailer" %>
-			<%= render "trailer_prop", {:territory => @detail.territory, :radius_class => @detail.radius_class, :model  => @detail.model, :cost_new => @detail.cost_new, :age_group => @detail.age_group, :load_capacity => @detail.load_capacity}, layout:'layouts/proposal_trailer' %>
+	<% elsif @submission.risk == "Trailer" %>
+		<%= render partial: "shared/proposals/trailer_prop", object: @detail, :locals => {territory: territory, radius_class:  radius_class, year: year, cost_new: cost_new, age_group: age_group, load_capacity: load_capacity} %>
 			
-		<% elsif @submission.risk.risk == "Semi-trailer" %>
-			<%= render "trailer_prop", {:territory => @detail.territory, :radius_class => @detail.radius_class, :model  => @detail.model, :cost_new => @detail.cost_new, :age_group => @detail.age_group, :load_capacity => @detail.load_capacity}, layout:'layouts/proposal_trailer' %>
+	<% elsif @submission.risk == "Semi-trailer" %>
+		<%= render partial: "shared/proposals/trailer_prop", object: @detail, :locals => {territory: territory, radius_class:  radius_class, year: year, cost_new: cost_new, age_group: age_group, load_capacity: load_capacity} %>
 				
-		<% else @submission.risk.risk == "Utility/Servicetrailer" %>
-			<%= render "trailer_prop", {:territory => @detail.territory, :radius_class => @detail.radius_class, :model  => @detail.model, :cost_new => @detail.cost_new, :age_group => @detail.age_group, :load_capacity => @detail.load_capacity}, layout:'layouts/proposal_trailer' %>
-				
-	
-<% end %>
+	<% else @submission.risk == "Utility/Service trailer" %>
+		<%= render partial: "shared/proposals/trailer_prop", object: @detail, :locals => {:territory => '000', :radius_class => '0', :year => '0000', :cost_new => '0', :age_group => '0', :load_capacity => '0'} %>
+			
+	<% end %>
 	
 </form>
 

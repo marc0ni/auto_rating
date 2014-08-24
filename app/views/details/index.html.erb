@@ -16,7 +16,6 @@
 <table class="table-bordered table-striped table-condensed flip-content">
   <thead class="flip-content">
     <tr>
-      <th>Partial</th>
       <th>Make</th>
       <th>Model</th>
       <th>Year</th>
@@ -40,7 +39,6 @@
   <tbody>
     <% @details.each do |detail| %>
       <tr>
-        <td><%= detail.partial %></td>
         <td><%= detail.make %></td>
         <td><%= detail.model %></td>
         <td><%= detail.year %></td>

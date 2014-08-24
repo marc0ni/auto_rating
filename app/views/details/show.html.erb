@@ -14,14 +14,6 @@
 	<h3> View All Details </h3>
 	<h3 class="form-section"></h3>
 	<div class="row-fluid">
-		<div class="span3 ">
-			<div class="control-group">
-				<label class="control-label" >Details Partial:</label>
-				<div class="controls">
-					<span class="text"><%= @detail.partial %></span>
-				</div>
-			</div>
-		</div>
 		
 		<div class="span3 ">
 			<div class="control-group">
@@ -40,9 +32,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
 	
-	<div class="row-fluid">	
 		<div class="span3">
 			<div class="control-group">
 				<label class="control-label" >Model Year:</label>
@@ -51,8 +41,9 @@
 				</div>
 			</div>
 		</div>
-		<!--/span-->
+		</div>
 	
+	<div class="row-fluid">
 		<div class="span3 ">
 			<div class="control-group">
 				<label class="control-label" >Cost-New:</label>
@@ -70,9 +61,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<!--/span-->
-	<div class="row-fluid">	
+	
 		<div class="span3">
 			<div class="control-group">
 				<label class="control-label" >Territory:</label>
@@ -107,7 +96,7 @@
 		<!--/span-->
 		<div class="span3">
 			<div class="control-group">
-				<label class="control-label" >Fleet/Non-fleet:</label>
+				<label class="control-label" >Fleet/Non-Fleet:</label>
 				<div class="controls">
 					<span class="text"><%= @detail.fleet_nonfleet %></span>
 				</div>
