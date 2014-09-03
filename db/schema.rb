@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140810013444) do
+ActiveRecord::Schema.define(version: 20140903203225) do
 
   create_table "accounts", force: true do |t|
     t.string   "name"
@@ -51,6 +51,11 @@ ActiveRecord::Schema.define(version: 20140810013444) do
   add_index "agents", ["account_id"], name: "index_agents_on_account_id"
   add_index "agents", ["proposal_id"], name: "index_agents_on_proposal_id"
   add_index "agents", ["submission_id"], name: "index_agents_on_submission_id"
+
+  create_table "carts", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "deductibles", force: true do |t|
     t.string   "partial"
@@ -98,6 +103,16 @@ ActiveRecord::Schema.define(version: 20140810013444) do
 
   add_index "limits", ["risk_id"], name: "index_limits_on_risk_id"
 
+  create_table "line_items", force: true do |t|
+    t.integer  "risk_id"
+    t.integer  "cart_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "line_items", ["cart_id"], name: "index_line_items_on_cart_id"
+  add_index "line_items", ["risk_id"], name: "index_line_items_on_risk_id"
+
   create_table "policies", force: true do |t|
     t.string   "policy_no"
     t.integer  "deductibles_id"
@@ -125,6 +140,17 @@ ActiveRecord::Schema.define(version: 20140810013444) do
   end
 
   add_index "premia", ["risk_id"], name: "index_premia_on_risk_id"
+
+  create_table "private_passengers", force: true do |t|
+    t.string   "territory"
+    t.string   "age_group"
+    t.decimal  "cost_new",   precision: 8, scale: 2
+    t.string   "make"
+    t.string   "model"
+    t.string   "year"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "proposals", force: true do |t|
     t.string   "proposal_no"
@@ -173,5 +199,33 @@ ActiveRecord::Schema.define(version: 20140810013444) do
   add_index "submissions", ["policy_id"], name: "index_submissions_on_policy_id"
   add_index "submissions", ["proposal_id"], name: "index_submissions_on_proposal_id"
   add_index "submissions", ["risk_id"], name: "index_submissions_on_risk_id"
+
+  create_table "trailers", force: true do |t|
+    t.string   "type"
+    t.string   "territory"
+    t.string   "radius_class"
+    t.string   "year"
+    t.decimal  "cost_new",      precision: 8, scale: 2
+    t.string   "age_group"
+    t.string   "load_capacity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "trucks", force: true do |t|
+    t.string   "type"
+    t.string   "territory"
+    t.string   "business_use"
+    t.string   "fleet_nonfleet"
+    t.string   "make"
+    t.string   "year"
+    t.decimal  "cost_new",       precision: 8, scale: 2
+    t.string   "age_group"
+    t.string   "size_class"
+    t.string   "gvw"
+    t.string   "gcw"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

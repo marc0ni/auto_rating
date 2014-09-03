@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @trailer.type %>
+</p>
+
+<p>
+  <strong>Territory:</strong>
+  <%= @trailer.territory %>
+</p>
+
+<p>
+  <strong>Radius class:</strong>
+  <%= @trailer.radius_class %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @trailer.year %>
+</p>
+
+<p>
+  <strong>Cost new:</strong>
+  <%= @trailer.cost_new %>
+</p>
+
+<p>
+  <strong>Age group:</strong>
+  <%= @trailer.age_group %>
+</p>
+
+<p>
+  <strong>Load capacity:</strong>
+  <%= @trailer.load_capacity %>
+</p>
+
+<%= link_to 'Edit', edit_trailer_path(@trailer) %> |
+<%= link_to 'Back', trailers_path %>

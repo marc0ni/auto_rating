@@ -1,0 +1,2 @@
+module PrivatePassengersHelper
+end

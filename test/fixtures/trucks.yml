@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  territory: MyString
+  business_use: MyString
+  fleet_nonfleet: MyString
+  make: MyString
+  year: MyString
+  cost_new: 9.99
+  age_group: MyString
+  size_class: MyString
+  gvw: MyString
+  gcw: MyString
+
+two:
+  type: 
+  territory: MyString
+  business_use: MyString
+  fleet_nonfleet: MyString
+  make: MyString
+  year: MyString
+  cost_new: 9.99
+  age_group: MyString
+  size_class: MyString
+  gvw: MyString
+  gcw: MyString

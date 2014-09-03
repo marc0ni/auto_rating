@@ -1,0 +1,61 @@
+<%= form_for(@truck) do |f| %>
+  <% if @truck.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@truck.errors.count, "error") %> prohibited this truck from being saved:</h2>
+
+      <ul>
+      <% @truck.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :type %><br>
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :territory %><br>
+    <%= f.text_field :territory %>
+  </div>
+  <div class="field">
+    <%= f.label :business_use %><br>
+    <%= f.text_field :business_use %>
+  </div>
+  <div class="field">
+    <%= f.label :fleet_nonfleet %><br>
+    <%= f.text_field :fleet_nonfleet %>
+  </div>
+  <div class="field">
+    <%= f.label :make %><br>
+    <%= f.text_field :make %>
+  </div>
+  <div class="field">
+    <%= f.label :year %><br>
+    <%= f.text_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :cost_new %><br>
+    <%= f.text_field :cost_new %>
+  </div>
+  <div class="field">
+    <%= f.label :age_group %><br>
+    <%= f.text_field :age_group %>
+  </div>
+  <div class="field">
+    <%= f.label :size_class %><br>
+    <%= f.text_field :size_class %>
+  </div>
+  <div class="field">
+    <%= f.label :gvw %><br>
+    <%= f.text_field :gvw %>
+  </div>
+  <div class="field">
+    <%= f.label :gcw %><br>
+    <%= f.text_field :gcw %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

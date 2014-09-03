@@ -1,4 +1,14 @@
 AutoRating::Application.routes.draw do
+  resources :line_items
+
+  resources :carts
+
+  resources :trucks
+
+  resources :trailers
+
+  resources :private_passengers
+
   resources :submissions
 
   resources :risks

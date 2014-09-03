@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Territory:</strong>
+  <%= @private_passenger.territory %>
+</p>
+
+<p>
+  <strong>Age group:</strong>
+  <%= @private_passenger.age_group %>
+</p>
+
+<p>
+  <strong>Cost new:</strong>
+  <%= @private_passenger.cost_new %>
+</p>
+
+<p>
+  <strong>Make:</strong>
+  <%= @private_passenger.make %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @private_passenger.model %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @private_passenger.year %>
+</p>
+
+<%= link_to 'Edit', edit_private_passenger_path(@private_passenger) %> |
+<%= link_to 'Back', private_passengers_path %>

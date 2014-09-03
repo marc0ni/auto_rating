@@ -1,0 +1,47 @@
+<h1>Listing trucks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Territory</th>
+      <th>Business use</th>
+      <th>Fleet nonfleet</th>
+      <th>Make</th>
+      <th>Year</th>
+      <th>Cost new</th>
+      <th>Age group</th>
+      <th>Size class</th>
+      <th>Gvw</th>
+      <th>Gcw</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trucks.each do |truck| %>
+      <tr>
+        <td><%= truck.type %></td>
+        <td><%= truck.territory %></td>
+        <td><%= truck.business_use %></td>
+        <td><%= truck.fleet_nonfleet %></td>
+        <td><%= truck.make %></td>
+        <td><%= truck.year %></td>
+        <td><%= truck.cost_new %></td>
+        <td><%= truck.age_group %></td>
+        <td><%= truck.size_class %></td>
+        <td><%= truck.gvw %></td>
+        <td><%= truck.gcw %></td>
+        <td><%= link_to 'Show', truck %></td>
+        <td><%= link_to 'Edit', edit_truck_path(truck) %></td>
+        <td><%= link_to 'Destroy', truck, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Truck', new_truck_path %>

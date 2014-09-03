@@ -1,0 +1,37 @@
+<h1>Listing private_passengers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Territory</th>
+      <th>Age group</th>
+      <th>Cost new</th>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Year</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @private_passengers.each do |private_passenger| %>
+      <tr>
+        <td><%= private_passenger.territory %></td>
+        <td><%= private_passenger.age_group %></td>
+        <td><%= private_passenger.cost_new %></td>
+        <td><%= private_passenger.make %></td>
+        <td><%= private_passenger.model %></td>
+        <td><%= private_passenger.year %></td>
+        <td><%= link_to 'Show', private_passenger %></td>
+        <td><%= link_to 'Edit', edit_private_passenger_path(private_passenger) %></td>
+        <td><%= link_to 'Destroy', private_passenger, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Private passenger', new_private_passenger_path %>

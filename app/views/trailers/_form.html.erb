@@ -1,0 +1,45 @@
+<%= form_for(@trailer) do |f| %>
+  <% if @trailer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trailer.errors.count, "error") %> prohibited this trailer from being saved:</h2>
+
+      <ul>
+      <% @trailer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :type %><br>
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :territory %><br>
+    <%= f.text_field :territory %>
+  </div>
+  <div class="field">
+    <%= f.label :radius_class %><br>
+    <%= f.text_field :radius_class %>
+  </div>
+  <div class="field">
+    <%= f.label :year %><br>
+    <%= f.text_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :cost_new %><br>
+    <%= f.text_field :cost_new %>
+  </div>
+  <div class="field">
+    <%= f.label :age_group %><br>
+    <%= f.text_field :age_group %>
+  </div>
+  <div class="field">
+    <%= f.label :load_capacity %><br>
+    <%= f.text_field :load_capacity %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
