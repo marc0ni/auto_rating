@@ -1,4 +1,13 @@
 <%= form_for :ttt_ded  do |f|%>
+    <% if @deductible.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@deductible.errors.count, "error") %> prohibited this Truck/Truck-Tractor/Trailer/Semi-Trailer/Utility-Service Trailer Deductible from being saved:</h2>
+		
+        <ul>
+        <% @deductible.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+
 <div class="container-fluid">
 	<!-- BEGIN FORM-->
 	<form action="#" class="form-horizontal">
