@@ -3,22 +3,22 @@
 	<form action="#" class="form-horizontal">
 		
 		<% if @submission.risk == "Private Passenger"%>
-			<%= render "shared/details/private_passenger", object: @detail, :locals => {territory: territory, age_group: age_group, cost_new: cost_new, make: make, model: model, year: year}  %>
+			<%= render "shared/details/private_passenger" %>
 		
 		<% elsif @submission.risk == "Truck"%>
-			<%= render :partial => "shared/details/truck", object: @detail, :locals => {territory: territory, business_use:  business_use, fleet_nonfleet: fleet_nonfleet, make: make, model:  model, cost_new: cost_new, age_group: age_group, size_class: size_class, radius_class: radius_class, gvw: gvw, gcw: gcw} %>
+			<%= render :partial => "shared/details/truck" %>
 			
 		<% elsif @submission.risk == "Truck Tractor"%>
-			<%= render :partial => "shared/details/truck", object: @detail, :locals => {territory: territory, business_use:  business_use, :fleet_nonfleet => fleet_nonfleet, :make => make, model: model, cost_new: cost_new, age_group: age_group, size_class: size_class, radius_class: radius_class, gvw: gvw, gcw: gcw} %>
+			<%= render :partial => "shared/details/truck" %>
 			
 		<% elsif @submission.risk == "Trailer" %>
-			<%= render :partial => "shared/details/trailer", object: @detail, :locals => {territory: territory, radius_class:  radius_class, year: year, cost_new: cost_new, age_group: age_group, load_capacity: load_capacity} %>
+			<%= render :partial => "shared/details/trailer" %>
 			
 		<% elsif @submission.risk == "Semi-Trailer" %>
-			<%= render :partial => "shared/details/trailer", object: @detail, :locals => {territory: territory, radius_class:  radius_class, year: year, cost_new: cost_new, age_group: age_group, load_capacity: load_capacity} %>
+			<%= render :partial => "shared/details/trailer" %>
 		
 		<% else @submission.risk == "Utility/Service trailer" %>
-			<%= render :partial => "shared/details/trailer", object: @detail, :locals => {:territory => '000', :radius_class => '0', :year => '0000', :cost_new => '0', :age_group => '0', :load_capacity => '0'} %>
+			<%= render :partial => "shared/details/trailer" %>
 			
 		<% end %>
 		

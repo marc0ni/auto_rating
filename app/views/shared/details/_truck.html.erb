@@ -1,4 +1,13 @@
 <%= form_for :truck, remote: true  do |f|%>
+    <% if @truck.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@truck.errors.count, "error") %> prohibited this deductible from being saved:</h2>
+
+        <ul>
+        <% @truck.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+
 <div class="container-fluid">
 	<!-- BEGIN FORM-->
 	<form action="#" class="form-horizontal">

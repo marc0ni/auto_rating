@@ -1,4 +1,15 @@
 <%= form_for :limits, remote: true  do |f|%>
+    <% if @limit.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@limit.errors.count, "error") %> prohibited this account from being saved:</h2>
+
+        <ul>
+        <% @limit.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+
+
+
 <div class="container-fluid">
 	<!-- BEGIN FORM-->
 	<form action="#" class="form-horizontal">
