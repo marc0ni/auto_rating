@@ -8,7 +8,7 @@
 		<% elsif @submission.risk == "Truck"%>
 			<%= render :partial => "shared/details/truck" %>
 			
-		<% elsif @submission.risk == "Truck Tractor"%>
+		<% elsif @submission.risk == "Truck-Tractor"%>
 			<%= render :partial => "shared/details/truck" %>
 			
 		<% elsif @submission.risk == "Trailer" %>
@@ -17,7 +17,7 @@
 		<% elsif @submission.risk == "Semi-Trailer" %>
 			<%= render :partial => "shared/details/trailer" %>
 		
-		<% else @submission.risk == "Utility/Service trailer" %>
+		<% else @submission.risk == "Utility/Service Trailer" %>
 			<%= render :partial => "shared/details/trailer" %>
 			
 		<% end %>
